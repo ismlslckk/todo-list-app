@@ -10,9 +10,10 @@ import Register from '@pages/Register';
 
 function App() {
 
+  const title = 'App'; 
+
   return (
     <>
-
       <Routes>
 
         <Route element={<ProtectedRoute />}>
