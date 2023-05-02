@@ -6,6 +6,7 @@ import AuthLayout from '@components/layouts/AuthLayout';
 import NotFound from '@pages/NotFound';
 import Login from '@pages/Login';
 import ProtectedRoute from '@components/routes/ProtectedRoute';
+import Register from '@pages/Register';
 
 function App() {
 
@@ -20,10 +21,9 @@ function App() {
           </Route>
         </Route>
 
-
-
         <Route path="/auth" element={<AuthLayout />}>
           <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
         </Route>
 
         <Route path="*" element={<NotFound />} />

@@ -2,11 +2,10 @@ import { Outlet } from 'react-router-dom';
 
 const AuthLayout = () => {
   return (
-    <div>
-      <h3 >Login Layout</h3>
-
+    <>
+      {/*login or register*/}
       <Outlet />
-    </div>
+    </>
   );
 };
 
