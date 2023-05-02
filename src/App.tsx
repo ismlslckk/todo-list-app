@@ -10,8 +10,8 @@ import Register from '@pages/Register';
 
 function App() {
  
-  const title23 = 'App'; 
-  
+  const title23 = 'App';  
+  const title233= 'App';  
 
   return (
 
