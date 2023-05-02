@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { fileURLToPath, URL } from "url";
 import eslint from 'vite-plugin-eslint';
+import stylelint from 'vite-plugin-stylelint';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,5 +15,7 @@ export default defineConfig({
 
     ],
   },
-  plugins: [react(),eslint()],
+  plugins: [react(), eslint(), stylelint({
+    fix: false
+  })],
 })

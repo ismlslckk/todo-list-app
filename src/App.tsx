@@ -9,11 +9,12 @@ import ProtectedRoute from '@components/routes/ProtectedRoute';
 import Register from '@pages/Register';
 
 function App() {
-
-  const title = 'App'; 
+ 
 
   return (
+
     <>
+    
       <Routes>
 
         <Route element={<ProtectedRoute />}>
