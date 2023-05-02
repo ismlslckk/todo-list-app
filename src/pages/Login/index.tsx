@@ -1,9 +1,6 @@
-const Login = () =>{
-    return (
+const Login = () => (
 
-        <>Login</>
-    );
-};
-
+  <>Login</>
+);
 
 export default Login;

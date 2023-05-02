@@ -1,10 +1,6 @@
-const Input = () => {
+const Input = () => (
 
-    return (
-
-        <></>
-    );
-
-};
+  <div>test</div>
+);
 
 export default Input;

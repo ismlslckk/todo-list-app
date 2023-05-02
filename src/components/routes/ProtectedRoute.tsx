@@ -4,12 +4,10 @@ import {
 } from 'react-router-dom';
 
 const ProtectedRoute = ({ redirectPath = '/auth/login', children = null }) => {
-  const token = localStorage.getItem("token");
-  if (!token)
-    return <Navigate to={redirectPath} replace />;
+  const token = localStorage.getItem('token');
+  if (!token) { return <Navigate to={redirectPath} replace />; }
 
-  return children ? children : <Outlet />;
+  return children || <Outlet />;
 };
-
 
 export default ProtectedRoute;

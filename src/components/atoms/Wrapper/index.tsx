@@ -1,16 +1,10 @@
-import React from "react";
-import  './wrapper.scss';
+import React from 'react';
+import './wrapper.scss';
 
-const Wrapper = (props: any) => {
-
-    return (
-
-        <React.Fragment>
-            <div className="wrapper">
-                {props.children}
-            </div>
-        </React.Fragment>
-    );
-}
+const Wrapper = (props: any) => (
+  <div className="wrapper">
+    {props.children}
+  </div>
+);
 
 export default Wrapper;

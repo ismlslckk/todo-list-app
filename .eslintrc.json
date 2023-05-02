@@ -1,0 +1,9 @@
+/* {
+  "extends": [
+    "arbnb",
+    "arbnb-typescript"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  }
+} */

@@ -1,9 +1,6 @@
-const NotFound = () =>{
-    return (
+const NotFound = () => (
 
-        <>NotFound</>
-    );
-};
-
+  <>NotFound</>
+);
 
 export default NotFound;

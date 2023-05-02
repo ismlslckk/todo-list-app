@@ -1,5 +1,5 @@
-import DefaultLayout from '@components/layouts/DefaultLayout'
-import './App.scss'
+import DefaultLayout from '@components/layouts/DefaultLayout';
+import './App.scss';
 import { Route, Routes } from 'react-router-dom';
 import Home from '@pages/Home';
 import AuthLayout from '@components/layouts/AuthLayout';
@@ -9,28 +9,23 @@ import ProtectedRoute from '@components/routes/ProtectedRoute';
 import Register from '@pages/Register';
 
 function App() {
- 
   return (
 
-    <>
-    
-      <Routes>
-
-        <Route element={<ProtectedRoute />}>
-          <Route path="/" element={<DefaultLayout />}>
-            <Route path="/" element={<Home />} />
-          </Route>
+    <Routes>
+      <Route element={<ProtectedRoute />}>
+        <Route path="/" element={<DefaultLayout />}>
+          <Route path="/" element={<Home />} />
         </Route>
+      </Route>
 
-        <Route path="/auth" element={<AuthLayout />}>
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
-        </Route>
+      <Route path="/auth" element={<AuthLayout />}>
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+      </Route>
 
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </>
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 
-export default App
+export default App;

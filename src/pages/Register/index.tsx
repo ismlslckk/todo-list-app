@@ -1,9 +1,4 @@
-const Register = () =>{
-    return (
-
-        <>Register</>
-    );
-};
-
-
+const Register = () => (
+  <>Register</>
+);
 export default Register;
