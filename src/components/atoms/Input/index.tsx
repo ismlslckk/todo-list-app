@@ -1,4 +1,4 @@
-const Input = (props: any) => {
+const Input = () => {
 
     return (
 
