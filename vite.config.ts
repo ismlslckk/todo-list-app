@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import { fileURLToPath, URL } from "url";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { fileURLToPath, URL } from 'url';
 import eslint from 'vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
 
@@ -12,10 +12,11 @@ export default defineConfig({
       { find: '@components', replacement: fileURLToPath(new URL('./src/components', import.meta.url)) },
       { find: '@pages', replacement: fileURLToPath(new URL('./src/pages', import.meta.url)) },
       { find: '@assets', replacement: fileURLToPath(new URL('./src/assets', import.meta.url)) },
-
+      { find: '@types', replacement: fileURLToPath(new URL('./src/types', import.meta.url)) },
     ],
   },
   plugins: [react(), eslint(), stylelint({
-    fix: false
+    fix: false,
   })],
-})
+
+});
