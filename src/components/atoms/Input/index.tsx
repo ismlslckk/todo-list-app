@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
-const Input = (props:any) => {
-  const inputElement = useRef();
+const Input = (props: any) => {
+  const inputElement: any = useRef();
 
   useEffect(() => {
     if (inputElement && inputElement.current) {

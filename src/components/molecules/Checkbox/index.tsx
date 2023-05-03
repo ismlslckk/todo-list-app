@@ -1,10 +1,16 @@
 import styles from './checkbox.module.scss';
 
-const Checkbox = () => (
+const Checkbox = (props:any) => (
 
   <div className={styles.round}>
-    <input type="checkbox" id="checkbox1" />
-    <label htmlFor="checkbox1" />
+    <input
+      name={props.name}
+      value={props.value}
+      onChange={(e) => props.onChange(e.target.checked)}
+      type="checkbox"
+      id={props.name}
+    />
+    <label htmlFor={props.name} />
   </div>
 
 );
