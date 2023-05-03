@@ -13,6 +13,7 @@ export default defineConfig({
       { find: '@pages', replacement: fileURLToPath(new URL('./src/pages', import.meta.url)) },
       { find: '@assets', replacement: fileURLToPath(new URL('./src/assets', import.meta.url)) },
       { find: '@types', replacement: fileURLToPath(new URL('./src/types', import.meta.url)) },
+      { find: '@features', replacement: fileURLToPath(new URL('./src/features', import.meta.url)) },
     ],
   },
   plugins: [react(), eslint(), stylelint({

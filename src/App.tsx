@@ -1,8 +1,9 @@
-import DefaultLayout from '@components/layouts/DefaultLayout';
+import React from 'react';
+import DefaultLayout from '@components/templates/DefaultLayout';
 import './App.scss';
 import { Route, Routes } from 'react-router-dom';
 import Home from '@pages/Home';
-import AuthLayout from '@components/layouts/AuthLayout';
+import AuthLayout from '@components/templates/AuthLayout';
 import NotFound from '@pages/NotFound';
 import Login from '@pages/Login';
 import ProtectedRoute from '@components/routes/ProtectedRoute';

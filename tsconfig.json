@@ -8,7 +8,9 @@
       "@/*": ["./src/*"],
       "@components/*": ["./src/components/*"],
       "@pages/*": ["./src/pages/*"],
-      "@assets/*": ["./src/assets/*"]
+      "@assets/*": ["./src/assets/*"],
+      "@types/*": ["./src/types/*"],
+      "@features/*": ["./src/features/*"],
     },
     /* Bundler mode */
     "moduleResolution": "bundler",

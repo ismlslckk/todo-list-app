@@ -1,6 +1,6 @@
 import Footer from '@components/organisms/Footer';
 import Header from '@components/organisms/Header';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 
 const DefaultLayout = () => {
