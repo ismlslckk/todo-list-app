@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-const Input = (props: any) => {
+const Input = ({ ...props }) => {
   const inputElement: any = useRef();
 
   useEffect(() => {
@@ -12,10 +12,9 @@ const Input = (props: any) => {
   return (
     <div>
       <input
+        style={{ minWidth: '300px' }}
         ref={inputElement}
-        name={props.name}
-        value={props.value}
-        onChange={(e) => props.onChange(e.target.value)}
+        {...props}
         className="form-control"
       />
     </div>

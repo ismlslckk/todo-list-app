@@ -20,6 +20,10 @@ const AddTodoInput = () => {
     dispatch(add(todo));
   };
 
+  const handleTitle = (e:any) => {
+    setTitleInput(e.target.value);
+  };
+
   const handleChange = (e:any) => {
     setCompleted(e.target.checked);
   };
@@ -29,18 +33,16 @@ const AddTodoInput = () => {
       <div className={styles.addTodoDiv}>
         <div className={styles.addTodoCheckboxDiv}>
           <Checkbox
-            name="completed"
             value={completed}
             checked={completed}
-            id="3443242342"
             onChange={handleChange}
           />
         </div>
         <div className={styles.addTodoInputDiv}>
           <Input
-            name="title"
+            placeholder="type something and press enter"
             value={titleInput}
-            onChange={setTitleInput}
+            onChange={handleTitle}
             className={styles.addTodoInputText}
           />
         </div>
