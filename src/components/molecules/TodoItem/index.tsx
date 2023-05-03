@@ -40,6 +40,9 @@ const TodoItem = (props:any) => {
         </span>
         )}
       </div>
+      <div className={styles.todoItemRemove}>
+        X
+      </div>
 
     </div>
   );

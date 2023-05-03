@@ -7,6 +7,7 @@
 
 .todoItemDiv {
     display: flex;
+    flex-direction: row;
     background: var(--white);
     border-bottom: 1px solid lightgray;
 }
@@ -17,6 +18,13 @@
 
 .todoItemInputDiv{
     margin-left: 10px;
+}
+
+.todoItemRemove{
+    display: flex;
+    color:gray;
+    align-items: center;
+    cursor: pointer;
 }
 
 .todoItemTextDecoration{

@@ -1,10 +1,11 @@
+import styles from './input.module.scss';
+
 const Input = ({ ...props }) => {
-  const className = `form-control ${props.className}`;
+  const className = `form-control ${props.className} ${styles.baseInput}`;
 
   return (
     <div>
       <input
-        style={{ minWidth: '300px' }}
         {...props}
         className={className}
       />
