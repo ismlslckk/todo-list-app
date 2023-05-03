@@ -7,8 +7,6 @@ const Input = (props: any) => {
     if (inputElement && inputElement.current) {
       inputElement.current.className += ` ${props.className}`;
     }
-    // eslint-disable-next-line no-console
-    console.log();
   }, []);
 
   return (

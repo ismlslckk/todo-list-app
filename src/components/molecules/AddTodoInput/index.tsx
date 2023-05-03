@@ -20,6 +20,10 @@ const AddTodoInput = () => {
     dispatch(add(todo));
   };
 
+  const handleChange = (e:any) => {
+    setCompleted(e.target.checked);
+  };
+
   return (
     <form onSubmit={onFormSubmit}>
       <div className={styles.addTodoDiv}>
@@ -27,7 +31,9 @@ const AddTodoInput = () => {
           <Checkbox
             name="completed"
             value={completed}
-            onChange={setCompleted}
+            checked={completed}
+            id="3443242342"
+            onChange={handleChange}
           />
         </div>
         <div className={styles.addTodoInputDiv}>

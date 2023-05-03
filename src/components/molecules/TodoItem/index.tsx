@@ -8,9 +8,7 @@ const TodoItem = (props:any) => {
   const { todo, radius } = { ...props };
 
   const handleCompletedChange = (event:any) => {
-    // eslint-disable-next-line no-console
-    console.log(event);
-    setCompleted(event);
+    setCompleted(event.target.checked);
   };
 
   useEffect(() => {
@@ -23,6 +21,7 @@ const TodoItem = (props:any) => {
         <Checkbox
           name="completed"
           value={completed}
+          checked={completed}
           id={todo.id}
           onChange={handleCompletedChange}
         />

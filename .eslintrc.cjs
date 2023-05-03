@@ -22,6 +22,7 @@ module.exports = {
     'import/prefer-default-export':'off',
     'react-hooks/exhaustive-deps':'off',
     'jsx-a11y/label-has-associated-control':'off',
-    'object-shorthand':'off'
+    'object-shorthand':'off',
+    'react/jsx-props-no-spreading':'off'
   },
 }
