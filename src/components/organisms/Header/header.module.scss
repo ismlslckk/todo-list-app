@@ -18,3 +18,10 @@
 .inputTodo {
     margin-left: 2px;
 }
+
+.todoList{
+    position: absolute;
+    margin-top: 100px;
+    max-height: 300px;
+    overflow-y: scroll;
+}

@@ -1,6 +1,7 @@
 import { InnerWrapper, Wrapper } from '@/components/atoms';
 import styles from './header.module.scss';
 import { AddTodoInput } from '@/components';
+import { TodoList } from '@/pages';
 
 const Headerv2 = () => (
   <Wrapper>
@@ -13,6 +14,10 @@ const Headerv2 = () => (
           <div>
             <AddTodoInput />
           </div>
+        </div>
+
+        <div className={styles.todoList}>
+          <TodoList />
         </div>
 
       </div>

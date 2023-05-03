@@ -1,0 +1,19 @@
+.todoInputText {
+    background-color: transparent !important;
+    border: none !important;
+    pointer-events: none;
+}
+
+.todoItemDiv {
+    display: flex;
+    background: var(--white);
+    border-bottom: 1px solid lightgray;
+}
+
+.todoItemCheckboxDiv {
+    margin: 5px 0 0 10px
+}
+
+.todoItemInputDiv{
+    margin-left: 10px;
+}

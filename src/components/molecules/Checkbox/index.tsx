@@ -1,18 +1,24 @@
 import styles from './checkbox.module.scss';
 
-const Checkbox = (props:any) => (
+const Checkbox = (props:any) => {
+  const inputUniqueKey = `${props.name}-${props.id}`;
+  const checked = props.value;
 
-  <div className={styles.round}>
-    <input
-      name={props.name}
-      value={props.value}
-      onChange={(e) => props.onChange(e.target.checked)}
-      type="checkbox"
-      id={props.name}
-    />
-    <label htmlFor={props.name} />
-  </div>
+  return (
 
-);
+    <div className={styles.round}>
+      <input
+        name={inputUniqueKey}
+        checked={checked}
+        value={checked}
+        onChange={(e) => props.onChange(e.target.checked)}
+        type="checkbox"
+        id={inputUniqueKey}
+      />
+      <label htmlFor={inputUniqueKey} />
+    </div>
+
+  );
+};
 
 export default Checkbox;

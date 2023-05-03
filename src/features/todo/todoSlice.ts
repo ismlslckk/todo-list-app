@@ -9,7 +9,8 @@ const todoSlice = createSlice({
   initialState,
   reducers: {
     add: (state, action: PayloadAction<Todo>) => {
-      const newTodo = ({ id: v4(), completed: false, title: action.payload.title }) as Todo;
+      // eslint-disable-next-line max-len
+      const newTodo = ({ id: v4(), completed: action.payload.completed, title: action.payload.title }) as Todo;
       state.push(newTodo);
       localStorage.setItem('todos', JSON.stringify(state));
     },

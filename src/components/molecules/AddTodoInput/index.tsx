@@ -15,6 +15,7 @@ const AddTodoInput = () => {
   const onFormSubmit = (event: any) => {
     event.preventDefault();
     setTitleInput('');
+    setCompleted(false);
     const todo = { title: titleInput, completed: completed } as Todo;
     dispatch(add(todo));
   };
