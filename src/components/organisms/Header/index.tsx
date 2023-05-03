@@ -1,32 +1,23 @@
-import { useState } from 'react';
-import { useAppDispatch } from '../../../store';
-import { add } from '@/features/todo/todoSlice';
-import { Todo } from '@/types';
+import { InnerWrapper, Wrapper } from '@/components/atoms';
+import styles from './header.module.scss';
+import { AddTodoInput } from '@/components';
 
-const Header = () => {
-  const [titleInput, setTitleInput] = useState('');
+const Headerv2 = () => (
+  <Wrapper>
+    <InnerWrapper>
+      <div className={styles.header}>
+        <div>
+          <div className={styles.todoHeaderText}>
+            <p>T O D O</p>
+          </div>
+          <div>
+            <AddTodoInput />
+          </div>
+        </div>
 
-  /*   const todos = useAppSelector((state) => state.todos); */
-  const dispatch = useAppDispatch();
+      </div>
+    </InnerWrapper>
+  </Wrapper>
+);
 
-  const onFormSubmit = (event:any) => {
-    event.preventDefault();
-    setTitleInput('');
-    const todo = { title: titleInput } as Todo;
-    dispatch(add(todo));
-  };
-
-  return (
-
-    <form onSubmit={onFormSubmit}>
-      <input
-        name="title"
-        value={titleInput}
-        onChange={(e) => setTitleInput(e.target.value)}
-      />
-    </form>
-
-  );
-};
-
-export default Header;
+export default Headerv2;
