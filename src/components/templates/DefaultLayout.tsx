@@ -1,7 +1,8 @@
 import Footer from '@components/organisms/Footer';
 import Header from '@components/organisms/Header';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
+import { InnerWrapper, Wrapper } from '../atoms';
 
 const DefaultLayout = () => {
   const [isLogged] = useState(true);
@@ -11,13 +12,15 @@ const DefaultLayout = () => {
   }
 
   return (
-    <>
-      <Header />
+    <Wrapper>
+      <InnerWrapper>
+        <Header />
 
-      <Outlet />
+        <Outlet />
 
-      <Footer />
-    </>
+        <Footer />
+      </InnerWrapper>
+    </Wrapper>
   );
 };
 

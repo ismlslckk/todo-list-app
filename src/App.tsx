@@ -6,6 +6,7 @@ import NotFound from '@pages/NotFound';
 import Login from '@pages/Login';
 import ProtectedRoute from '@components/routes/ProtectedRoute';
 import Register from '@pages/Register';
+import { Home } from './pages';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
     <Routes>
       <Route element={<ProtectedRoute />}>
         <Route path="/" element={<DefaultLayout />}>
-          {/* <Route path="/" element={<TodoList />} /> */}
+          <Route path="/" element={<Home />} />
         </Route>
       </Route>
 
