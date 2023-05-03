@@ -19,6 +19,8 @@ module.exports = {
     'react/prop-types':'off',
     'import/no-extraneous-dependencies':'off',
     'react/destructuring-assignment':'off',
-    'import/prefer-default-export':'off'
+    'import/prefer-default-export':'off',
+    'react-hooks/exhaustive-deps':'off',
+    'jsx-a11y/label-has-associated-control':'off'
   },
 }

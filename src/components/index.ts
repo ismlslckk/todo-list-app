@@ -1,3 +1,4 @@
 export { default as Header } from '@components/organisms/Header';
 export { default as Footer } from '@components/organisms/Footer';
 export { default as AddTodoInput } from '@components/molecules/AddTodoInput';
+export { default as Checkbox } from '@components/molecules/Checkbox';
