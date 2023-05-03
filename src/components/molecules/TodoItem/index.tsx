@@ -28,10 +28,13 @@ const TodoItem = (props:any) => {
         />
       </div>
       <div className={styles.todoItemInputDiv}>
-        <Input
-          value={todo.title}
-          className={styles.todoInputText}
-        />
+
+        {!completed && (<Input value={todo.title} className={styles.todoInputText} />)}
+        {completed && (
+        <span className={styles.todoItemTextDecoration}>
+          <Input value={todo.title} className={styles.todoInputText} />
+        </span>
+        )}
       </div>
 
     </div>
