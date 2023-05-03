@@ -4,6 +4,10 @@ import { Todo } from '@/types';
 
 const initialState: Todo[] = [];
 
+const setLocalStorage = (list:Todo[]) => {
+  localStorage.setItem('todos', JSON.stringify(list));
+};
+
 const todoSlice = createSlice({
   name: 'todos',
   initialState,
@@ -12,10 +16,12 @@ const todoSlice = createSlice({
       // eslint-disable-next-line max-len
       const newTodo = ({ id: v4(), completed: action.payload.completed, title: action.payload.title }) as Todo;
       state.push(newTodo);
-      localStorage.setItem('todos', JSON.stringify(state));
+      setLocalStorage(state);
     },
+    // eslint-disable-next-line max-len
+    toggleCompleted: (state, action: PayloadAction<Todo>) => state.map((item) => (item.id === action.payload.id ? { ...item, completed: !item.completed } : item)),
   },
 });
 
 export default todoSlice.reducer;
-export const { add } = todoSlice.actions;
+export const { add, toggleCompleted } = todoSlice.actions;
