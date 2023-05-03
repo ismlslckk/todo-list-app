@@ -1,4 +1,3 @@
-import React from 'react';
 import './wrapper.scss';
 
 const Wrapper = (props: any) => (
