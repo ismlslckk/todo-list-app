@@ -4,11 +4,10 @@ import {
   Todo, TodoState, TodoType,
 } from '@/types';
 
-const initialState: TodoState = { todos: [], selectedTodoType: TodoType.ALL };
-
-const setLocalStorage = (list:Todo[]) => {
-  localStorage.setItem('todos', JSON.stringify(list));
-};
+let initialTodos:Todo[] = [];
+const localStorageTodos = localStorage.getItem('todos');
+if (localStorageTodos && localStorageTodos !== 'undefined') initialTodos = JSON.parse(localStorageTodos.toString()) as Todo[];
+const initialState: TodoState = { todos: initialTodos, selectedTodoType: TodoType.ALL };
 
 const todoSlice = createSlice({
   name: 'todos',
@@ -17,7 +16,6 @@ const todoSlice = createSlice({
     add: (state, action: PayloadAction<Todo>) => {
       const newTodo = ({ id: v4(), completed: action.payload.completed, title: action.payload.title }) as Todo;
       state.todos.push(newTodo);
-      setLocalStorage(state.todos);
     },
     remove: (state, action:PayloadAction<Todo>) => {
       const findedItem = state.todos.find((item:Todo) => item.id === action.payload.id);
@@ -25,7 +23,6 @@ const todoSlice = createSlice({
         const index = state.todos.indexOf(findedItem, 0);
         if (index > -1) {
           state.todos.splice(index, 1);
-          setLocalStorage(state.todos);
         }
       }
     },
@@ -40,7 +37,6 @@ const todoSlice = createSlice({
       const findedItem = state.todos.find((item:Todo) => item.id === action.payload.id);
       if (findedItem) {
         findedItem.completed = !findedItem.completed;
-        setLocalStorage(state.todos);
       }
     },
     setSelectedTodoType: (state, action:PayloadAction<TodoType>) => ({ ...state, selectedTodoType: action.payload }),
