@@ -13,15 +13,14 @@ const todoSlice = createSlice({
   initialState,
   reducers: {
     add: (state, action: PayloadAction<Todo>) => {
-      // eslint-disable-next-line max-len
       const newTodo = ({ id: v4(), completed: action.payload.completed, title: action.payload.title }) as Todo;
       state.push(newTodo);
       setLocalStorage(state);
     },
-    // eslint-disable-next-line max-len
+    remove: (state, action:PayloadAction<Todo>) => state.filter((todo:Todo) => todo.id !== action.payload.id),
     toggleCompleted: (state, action: PayloadAction<Todo>) => state.map((item) => (item.id === action.payload.id ? { ...item, completed: !item.completed } : item)),
   },
 });
 
 export default todoSlice.reducer;
-export const { add, toggleCompleted } = todoSlice.actions;
+export const { add, remove, toggleCompleted } = todoSlice.actions;

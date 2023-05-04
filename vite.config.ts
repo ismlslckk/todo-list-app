@@ -14,6 +14,7 @@ export default defineConfig({
       { find: '@assets', replacement: fileURLToPath(new URL('./src/assets', import.meta.url)) },
       { find: '@types', replacement: fileURLToPath(new URL('./src/types', import.meta.url)) },
       { find: '@features', replacement: fileURLToPath(new URL('./src/features', import.meta.url)) },
+      { find: '@hooks', replacement: fileURLToPath(new URL('./src/hooks', import.meta.url)) },
     ],
   },
   plugins: [react(), eslint(), stylelint({

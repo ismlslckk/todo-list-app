@@ -25,6 +25,12 @@
     color:gray;
     align-items: center;
     cursor: pointer;
+
+    & .removeButton{
+        cursor: pointer;
+        border: unset;
+        background: transparent;
+    }
 }
 
 .todoItemTextDecoration{

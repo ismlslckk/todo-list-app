@@ -11,6 +11,7 @@
       "@assets/*": ["./src/assets/*"],
       "@types/*": ["./src/types/*"],
       "@features/*": ["./src/features/*"],
+      "@hooks/*": ["./src/hooks/*"]
     },
     /* Bundler mode */
     "moduleResolution": "bundler",

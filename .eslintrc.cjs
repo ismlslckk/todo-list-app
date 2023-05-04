@@ -23,6 +23,7 @@ module.exports = {
     'react-hooks/exhaustive-deps':'off',
     'jsx-a11y/label-has-associated-control':'off',
     'object-shorthand':'off',
-    'react/jsx-props-no-spreading':'off'
+    'react/jsx-props-no-spreading':'off',
+    'max-len':0
   },
 }
