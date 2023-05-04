@@ -25,13 +25,22 @@ const todoSlice = createSlice({
         const index = state.todos.indexOf(findedItem, 0);
         if (index > -1) {
           state.todos.splice(index, 1);
+          setLocalStorage(state.todos);
         }
       }
+    },
+    // eslint-disable-next-line  arrow-body-style
+    clearCompleted: (state) => {
+      return {
+        ...state,
+        todos: [...state.todos].filter((todo) => todo.completed === false),
+      };
     },
     toggleCompleted: (state, action: PayloadAction<Todo>) => {
       const findedItem = state.todos.find((item:Todo) => item.id === action.payload.id);
       if (findedItem) {
         findedItem.completed = !findedItem.completed;
+        setLocalStorage(state.todos);
       }
     },
     setSelectedTodoType: (state, action:PayloadAction<TodoType>) => ({ ...state, selectedTodoType: action.payload }),
@@ -40,5 +49,5 @@ const todoSlice = createSlice({
 
 export default todoSlice.reducer;
 export const {
-  add, remove, toggleCompleted, setSelectedTodoType,
+  add, remove, toggleCompleted, setSelectedTodoType, clearCompleted,
 } = todoSlice.actions;

@@ -6,7 +6,7 @@ import {
   Todo, TodoType,
 } from '@/types';
 import styles from './todolist.module.scss';
-import { setSelectedTodoType } from '@/features/todo/todoSlice';
+import { clearCompleted, setSelectedTodoType } from '@/features/todo/todoSlice';
 
 const TodoList = () => {
   const todoState = useAppSelector((state) => state.todoState);
@@ -37,6 +37,11 @@ const TodoList = () => {
     dispatch(setSelectedTodoType(TodoType.COMPLETED));
     const records = [...todos.filter((item:Todo) => item.completed === true)];
     setListedRecords(records);
+  };
+
+  const clearCompletedHandle = () => {
+    dispatch(clearCompleted());
+    dispatch(setSelectedTodoType(TodoType.ACTIVE));
   };
 
   const actions:any = {
@@ -72,7 +77,7 @@ const TodoList = () => {
           <button onClick={() => listAllRecors()} type="button" className={styles.clickable}>All</button>
           <button onClick={() => listActiveRecors()} type="button" className={styles.clickable}>Active</button>
           <button onClick={() => listCompletedRecors()} type="button" className={styles.clickable}>Completed</button>
-          <button type="button" className={styles.clickable}>Clear Completed</button>
+          <button onClick={() => clearCompletedHandle()} type="button" className={styles.clickable}>Clear Completed</button>
         </div>
       </InnerWrapper>
     </Wrapper>
