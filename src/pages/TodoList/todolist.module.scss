@@ -13,6 +13,12 @@
         color:lightgray;
         font-weight: bold;
     }
+
+    & .clickable{
+        cursor: pointer;
+        border: unset;
+        background: var(--white);
+    }
 }
 
 .todoListBody{

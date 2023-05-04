@@ -4,8 +4,8 @@ import { Route, Routes } from 'react-router-dom';
 import AuthLayout from '@components/templates/AuthLayout';
 import NotFound from '@pages/NotFound';
 import Login from '@pages/Login';
-import ProtectedRoute from '@components/routes/ProtectedRoute';
 import Register from '@pages/Register';
+import ProtectedRoute from '@/routes/ProtectedRoute';
 import { Home } from './pages';
 
 function App() {

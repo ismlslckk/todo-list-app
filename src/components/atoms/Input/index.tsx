@@ -1,7 +1,10 @@
+import classNames from 'classnames';
 import styles from './input.module.scss';
 
 const Input = ({ ...props }) => {
-  const className = `form-control ${props.className} ${styles.baseInput}`;
+  const className = classNames('form-control', styles.baseInput, {
+    [`${props.className}`]: props.className,
+  });
 
   return (
     <div>

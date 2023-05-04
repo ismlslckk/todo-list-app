@@ -4,6 +4,7 @@ import { fileURLToPath, URL } from 'url';
 import eslint from 'vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
 
+// todo: reduce alias types
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
