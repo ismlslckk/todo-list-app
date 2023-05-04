@@ -20,7 +20,13 @@ const todoSlice = createSlice({
       setLocalStorage(state.todos);
     },
     remove: (state, action:PayloadAction<Todo>) => {
-      state.todos.filter((todo:Todo) => todo.id !== action.payload.id);
+      const findedItem = state.todos.find((item:Todo) => item.id === action.payload.id);
+      if (findedItem) {
+        const index = state.todos.indexOf(findedItem, 0);
+        if (index > -1) {
+          state.todos.splice(index, 1);
+        }
+      }
     },
     toggleCompleted: (state, action: PayloadAction<Todo>) => {
       const findedItem = state.todos.find((item:Todo) => item.id === action.payload.id);
