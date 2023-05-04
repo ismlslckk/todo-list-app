@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import classNames from 'classnames';
 import { TodoItem } from '@/components';
 import { InnerWrapper, Wrapper } from '@/components/atoms';
 import { useAppDispatch, useAppSelector } from '@/store';
@@ -74,9 +75,9 @@ const TodoList = () => {
         </div>
         <div className={styles.footer}>
           <span className={styles.leftItemCount}>{`${leftItemCount} items left`}</span>
-          <button onClick={() => listAllRecors()} type="button" className={styles.clickable}>All</button>
-          <button onClick={() => listActiveRecors()} type="button" className={styles.clickable}>Active</button>
-          <button onClick={() => listCompletedRecors()} type="button" className={styles.clickable}>Completed</button>
+          <button className={classNames(styles.clickable, { [`${styles.selectedItem}`]: selectedTodoType === TodoType.ALL })} onClick={() => listAllRecors()} type="button">All</button>
+          <button className={classNames(styles.clickable, { [`${styles.selectedItem}`]: selectedTodoType === TodoType.ACTIVE })} onClick={() => listActiveRecors()} type="button">Active</button>
+          <button className={classNames(styles.clickable, { [`${styles.selectedItem}`]: selectedTodoType === TodoType.COMPLETED })} onClick={() => listCompletedRecors()} type="button">Completed</button>
           <button onClick={() => clearCompletedHandle()} type="button" className={styles.clickable}>Clear Completed</button>
         </div>
       </InnerWrapper>
