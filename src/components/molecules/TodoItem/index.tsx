@@ -48,11 +48,16 @@ const TodoItem = (props:any) => {
         </span>
         )}
       </div>
-      {(isHovering
-        && (<div className={styles.todoItemRemove}><button className={styles.removeButton} type="button" onClick={() => handleRemoveItemClick()}>X</button></div>))}
+      <div className={styles.todoItemRemove}>
+        {((isHovering)
+        && (<button className={styles.removeButton} type="button" onClick={() => handleRemoveItemClick()}>X</button>))}
+
+      </div>
 
     </div>
   );
 };
 
 export default TodoItem;
+
+// className={styles['todo-item-remove']}

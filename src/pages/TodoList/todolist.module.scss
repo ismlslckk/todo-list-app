@@ -1,0 +1,25 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: small;
+    min-height: 30px;
+    width: 100%;
+    border-top: solid 1px lightgray;
+    background-color: var(--white);
+
+    & .leftItemCount{
+        color:lightgray;
+        font-weight: bold;
+    }
+}
+
+.todoListBody{
+    min-height: 327px;
+    max-height: 327px;
+    min-width: 367px;
+    max-width: 367px;
+    background-color: var(--white);
+    overflow-y: scroll;
+}
