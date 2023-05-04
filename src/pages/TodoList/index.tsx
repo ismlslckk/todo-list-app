@@ -2,13 +2,15 @@ import { useEffect, useState } from 'react';
 import { TodoItem } from '@/components';
 import { InnerWrapper, Wrapper } from '@/components/atoms';
 import { useAppDispatch, useAppSelector } from '@/store';
-import { Todo } from '@/types';
+import {
+  Todo, TodoType,
+} from '@/types';
 import styles from './todolist.module.scss';
-import { setActivePage } from '@/features/globalSlice';
+import { setSelectedTodoType } from '@/features/todo/todoSlice';
 
 const TodoList = () => {
-  const todos = useAppSelector((state) => state.todos);
-  const globalState = useAppSelector((state) => state.globalState);
+  const todoState = useAppSelector((state) => state.todoState);
+  const { todos, selectedTodoType } = todoState;
 
   const dispatch = useAppDispatch();
 
@@ -21,30 +23,30 @@ const TodoList = () => {
   };
 
   const listAllRecors = () => {
-    dispatch(setActivePage(listAllRecors.name));
+    dispatch(setSelectedTodoType(TodoType.ALL));
     setListedRecords([...todos]);
   };
 
   const listActiveRecors = () => {
-    dispatch(setActivePage(listActiveRecors.name));
+    dispatch(setSelectedTodoType(TodoType.ACTIVE));
     const records = [...todos.filter((item:Todo) => item.completed === false)];
     setListedRecords(records);
   };
 
   const listCompletedRecors = () => {
-    dispatch(setActivePage(listCompletedRecors.name));
+    dispatch(setSelectedTodoType(TodoType.COMPLETED));
     const records = [...todos.filter((item:Todo) => item.completed === true)];
     setListedRecords(records);
   };
 
-  const actions = {
-    listAllRecors,
-    listActiveRecors,
-    listCompletedRecors,
-  } as any;
+  const actions:any = {
+    [`${TodoType.ALL}`]: listAllRecors,
+    [`${TodoType.ACTIVE}`]: listActiveRecors,
+    [`${TodoType.COMPLETED}`]: listCompletedRecors,
+  };
 
   useEffect(() => {
-    dispatch(setActivePage(listAllRecors.name));
+    dispatch(setSelectedTodoType(TodoType.ALL));
   }, []);
 
   useEffect(() => {
@@ -52,10 +54,10 @@ const TodoList = () => {
   }, [listedRecords]);
 
   useEffect(() => {
-    if (globalState.selectedTodoAction) {
-      actions[globalState.selectedTodoAction]();
+    if (selectedTodoType) {
+      actions[selectedTodoType]();
     }
-  }, [globalState.selectedTodoAction, todos]);
+  }, [selectedTodoType, todos]);
 
   return (
     <Wrapper>
