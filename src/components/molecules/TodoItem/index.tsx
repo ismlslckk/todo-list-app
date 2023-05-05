@@ -11,7 +11,7 @@ const TodoItem = (props:any) => {
   const [completed, setCompleted] = useState(false);
   const { todo = {} as Todo } = { ...props };
 
-  const [hoverRef, isHovering] = useHover();
+  const [hoverRef, isHovering] = useHover<HTMLDivElement>();
 
   const dispatch = useAppDispatch();
 

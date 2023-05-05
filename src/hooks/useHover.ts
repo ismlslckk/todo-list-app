@@ -1,31 +1,30 @@
-import { useCallback, useRef, useState } from 'react';
+// Hook
+// T - could be any type of HTML element like: HTMLDivElement, HTMLParagraphElement and etc.
 
-const useHover = () => {
-  const [isHovering, setIsHovering] = useState(false);
+import {
+  MutableRefObject, useEffect, useRef, useState,
+} from 'react';
 
-  const handleMouseOver = useCallback(() => setIsHovering(true), []);
-  const handleMouseOut = useCallback(() => setIsHovering(false), []);
-
-  const nodeRef: any = useRef();
-
-  const callbackRef = useCallback(
-    (node: any) => {
-      if (nodeRef.current) {
-        nodeRef.current.removeEventListener('mouseover', handleMouseOver);
-        nodeRef.current.removeEventListener('mouseout', handleMouseOut);
-      }
-
-      nodeRef.current = node;
-
-      if (nodeRef.current) {
-        nodeRef.current.addEventListener('mouseover', handleMouseOver);
-        nodeRef.current.addEventListener('mouseout', handleMouseOut);
+// hook returns tuple(array) with type [any, boolean]
+export default function useHover<T>(): [MutableRefObject<T>, boolean] {
+  const [value, setValue] = useState<boolean>(false);
+  const ref: any = useRef<T | null>(null);
+  const handleMouseOver = (): void => setValue(true);
+  const handleMouseOut = (): void => setValue(false);
+  useEffect(
+    // eslint-disable-next-line consistent-return
+    () => {
+      const node: any = ref.current;
+      if (node) {
+        node.addEventListener('mouseover', handleMouseOver);
+        node.addEventListener('mouseout', handleMouseOut);
+        return () => {
+          node.removeEventListener('mouseover', handleMouseOver);
+          node.removeEventListener('mouseout', handleMouseOut);
+        };
       }
     },
-    [handleMouseOver, handleMouseOut],
+    [ref.current], // Recall only if ref changes
   );
-
-  return [callbackRef, isHovering];
-};
-
-export default useHover;
+  return [ref, value];
+}
