@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { v4 } from 'uuid';
 import styles from './checkbox.module.scss';
+import Input from '@/components/atoms/Input';
 
 const Checkbox = ({ ...props }) => {
   const [id] = useState(v4());
@@ -8,7 +9,7 @@ const Checkbox = ({ ...props }) => {
   return (
 
     <div className={styles.round}>
-      <input
+      <Input
         type="checkbox"
         {...props}
         id={id}

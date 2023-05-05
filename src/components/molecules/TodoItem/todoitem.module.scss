@@ -2,6 +2,8 @@
     background-color: transparent !important;
     border: none !important;
     pointer-events: none;
+    min-width: 290px;
+    max-width: 290px;
     text-overflow: ellipsis;
 }
 
