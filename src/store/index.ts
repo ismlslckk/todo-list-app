@@ -7,8 +7,8 @@ const setLocalStorage = (list:Todo[]) => {
   localStorage.setItem('todos', JSON.stringify(list));
 };
 
-// eslint-disable-next-line arrow-body-style, @typescript-eslint/no-unused-vars
-const localStorageRepositoryMiddleware: Middleware = ({ getState, dispatch }) => {
+// eslint-disable-next-line arrow-body-style
+const localStorageRepositoryMiddleware: Middleware = ({ getState }) => {
   return (next:any) => (action:any) => {
     const { todoState } = getState();
     setLocalStorage(todoState.todos);

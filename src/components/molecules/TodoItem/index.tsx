@@ -29,9 +29,10 @@ const TodoItem = (props:any) => {
   }, []);
 
   return (
-    <div className={styles.todoItemDiv} ref={hoverRef}>
+    <div className={styles.todoItemDiv}>
       <div className={styles.todoItemCheckboxDiv}>
         <Checkbox
+          ref={hoverRef}
           name="completed"
           value={completed}
           checked={completed}

@@ -1,7 +1,7 @@
-import Footer from '@components/organisms/Footer';
-import Header from '@components/organisms/Header';
 import { useState } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
+import Footer from '@/components/organisms/Footer';
+import Header from '@/components/organisms/Header';
 import { InnerWrapper, Wrapper } from '../atoms';
 
 const DefaultLayout = () => {

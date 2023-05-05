@@ -1,10 +1,10 @@
-import DefaultLayout from '@components/templates/DefaultLayout';
-import './App.scss';
 import { Route, Routes } from 'react-router-dom';
-import AuthLayout from '@components/templates/AuthLayout';
-import NotFound from '@pages/NotFound';
-import Login from '@pages/Login';
-import Register from '@pages/Register';
+import DefaultLayout from '@/components/templates/DefaultLayout';
+import './App.scss';
+import AuthLayout from '@/components/templates/AuthLayout';
+import NotFound from '@/pages/NotFound';
+import Login from '@/pages/Login';
+import Register from '@/pages/Register';
 import ProtectedRoute from '@/routes/ProtectedRoute';
 import { Home } from './pages';
 
