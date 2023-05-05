@@ -29,10 +29,9 @@ const TodoItem = (props:any) => {
   }, []);
 
   return (
-    <div className={styles.todoItemDiv}>
+    <div className={styles.todoItemDiv} ref={hoverRef}>
       <div className={styles.todoItemCheckboxDiv}>
         <Checkbox
-          ref={hoverRef}
           name="completed"
           value={completed}
           checked={completed}
@@ -51,7 +50,7 @@ const TodoItem = (props:any) => {
       </div>
       <div className={styles.todoItemRemove}>
         {((isHovering)
-        && (<button className={styles.removeButton} type="button" onClick={() => handleRemoveItemClick()}>X</button>))}
+    && (<button className={styles.removeButton} type="button" onClick={() => handleRemoveItemClick()}>X</button>))}
 
       </div>
 
