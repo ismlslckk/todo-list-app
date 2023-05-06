@@ -3,13 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://ismlslckk.github.io/todo-list-app/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "test": "jest --env=jsdom",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
@@ -50,7 +53,8 @@
     "typescript": "^5.0.2",
     "vite": "^4.3.2",
     "vite-plugin-eslint": "^1.8.1",
-    "vite-plugin-stylelint": "^4.3.0"
+    "vite-plugin-stylelint": "^4.3.0",
+    "gh-pages": "^5.0.0"
   },
   "lint-staged": {
     "*.{ts,tsx}": "npm run lint",

@@ -7,6 +7,6 @@
     "font-family-no-duplicate-names":null
   },
   "ignoreFiles": [
-    "build/assets/index-4ec158d9.css"
+    "build/assets/**/*.css"
 ]
 }
