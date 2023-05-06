@@ -6,6 +6,8 @@ import { TodoList } from '@/pages';
 import { add, remove, toggleCompleted } from '@/features/todo/todoSlice';
 import { Todo } from '@/types';
 
+// #region components begin
+
 test('expect input should get className from props', async () => {
   render(<Provider store={store}><Input className="form-control" readOnly value="input-test" /></Provider>);
 
@@ -20,6 +22,10 @@ test('expect todo list page is rendering with todo types', async () => {
   expect(screen.queryByText('Completed')).not.toBeNull();
   expect(screen.queryByText('Clear Completed')).not.toBeNull();
 });
+
+// #endregion components end
+
+// #region Reducers begin
 
 test('store => todoSlice actions should work as correctly', () => {
   // step1 : add 2 new items
@@ -42,3 +48,5 @@ test('store => todoSlice actions should work as correctly', () => {
   expect(secondTodoItem.title).toEqual('test2');
   expect(secondTodoItem.completed).toEqual(true);
 });
+
+// #endregion Reducers end
