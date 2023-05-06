@@ -5,5 +5,8 @@
     "property-no-vendor-prefix":null,
     "selector-class-pattern":null,
     "font-family-no-duplicate-names":null
-  }
+  },
+  "ignoreFiles": [
+    "build/assets/index-4ec158d9.css"
+]
 }
