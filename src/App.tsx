@@ -14,7 +14,7 @@ function App() {
     <Routes>
       <Route element={<ProtectedRoute />}>
         <Route path="/" element={<DefaultLayout />}>
-          <Route path="/" element={<Home />} />
+          <Route path="/todo-list-app" element={<Home />} />
         </Route>
       </Route>
 

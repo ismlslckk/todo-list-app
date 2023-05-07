@@ -12,6 +12,7 @@ export default defineConfig({
       { find: '@', replacement: fileURLToPath(new URL('./src', import.meta.url)) },
     ],
   },
+  base: '/todo-list-app',
   plugins: [react(), eslint(), stylelint({
     fix: false,
   })],

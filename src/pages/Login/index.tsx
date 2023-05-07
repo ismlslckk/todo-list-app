@@ -1,6 +1,6 @@
 const Login = () => (
 
-  <>Login</>
+  <>Login page</>
 );
 
 export default Login;
