@@ -21,7 +21,7 @@ const Form = () => {
 
   const redirectHomePage = () => {
     const token = localStorage.getItem('token');
-    if (token) { navigate('/'); }
+    if (token) { navigate('/todo-list-app/'); }
   };
 
   const handleSubmit = (e:any) => {

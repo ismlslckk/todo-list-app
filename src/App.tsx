@@ -14,11 +14,11 @@ function App() {
     <Routes>
       <Route element={<ProtectedRoute />}>
         <Route path="/" element={<DefaultLayout />}>
-          <Route path="/todo-list-app" element={<Home />} />
+          <Route path="/todo-list-app/" element={<Home />} />
         </Route>
       </Route>
 
-      <Route path="/auth" element={<AuthLayout />}>
+      <Route path="todo-list-app/auth" element={<AuthLayout />}>
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
       </Route>
