@@ -1,29 +1,61 @@
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { InnerWrapper, Wrapper } from '@/components/atoms';
+import styles from './login.module.scss';
+import Button from '@/components/atoms/Button';
 
-const Form = () =>
-/*   const [form, setForm] = useState({
+const Form = () => {
+  const navigate = useNavigate();
+
+  const [loginForm, setLoginForm] = useState({
     username: '',
     password: '',
   });
 
   const handleChange = (e:any) => {
-    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
-    setForm((state) => ({
+    setLoginForm((state) => ({
       ...state,
-      [e.target.name]: value,
+      [e.target.name]: e.target.value,
     }));
+  };
+
+  const redirectHomePage = () => {
+    const token = localStorage.getItem('token');
+    if (token) { navigate('/'); }
   };
 
   const handleSubmit = (e:any) => {
     e.preventDefault();
-  }; */
+    localStorage.setItem('token', 'default_login_token');
+    redirectHomePage();
+  };
 
-  // eslint-disable-next-line implicit-arrow-linebreak
-  (
+  useEffect(() => {
+    redirectHomePage();
+  }, []);
+
+  return (
     <Wrapper>
       <InnerWrapper>
-        login page . .
+        <form className={styles.loginForm} onSubmit={handleSubmit}>
+          <div className={styles.inputContainer}>
+            <h3>Login</h3>
+          </div>
+          <div className={styles.inputContainer}>
+            <label>Username </label>
+            <input value={loginForm.username} onChange={handleChange} className={styles.loginInput} type="text" name="username" />
+          </div>
+          <div className={styles.inputContainer}>
+            <label>Password </label>
+            <input value={loginForm.password} onChange={handleChange} className={styles.loginInput} type="password" name="password" />
+          </div>
+          <div className={styles.buttonContainer}>
+            <Button className={styles.loginButton} type="submit">Login</Button>
+          </div>
+        </form>
       </InnerWrapper>
     </Wrapper>
   );
+};
+
 export default Form;

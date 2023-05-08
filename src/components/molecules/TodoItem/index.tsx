@@ -6,6 +6,7 @@ import { remove, toggleCompleted } from '@/features/todo/todoSlice';
 import { useAppDispatch } from '@/store';
 import { Todo } from '@/types';
 import { useHover } from '@/hooks';
+import Button from '@/components/atoms/Button';
 
 const TodoItem = (props:any) => {
   const [completed, setCompleted] = useState(false);
@@ -50,7 +51,7 @@ const TodoItem = (props:any) => {
       </div>
       <div className={styles.todoItemRemove}>
         {((isHovering)
-    && (<button className={styles.removeButton} type="button" onClick={() => handleRemoveItemClick()}>X</button>))}
+    && (<Button className={styles.removeButton} type="button" onClick={() => handleRemoveItemClick()}>X</Button>))}
 
       </div>
 

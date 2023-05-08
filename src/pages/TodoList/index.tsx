@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { TodoItem } from '@/components';
+import Button from '@/components/atoms/Button';
 import { InnerWrapper, Wrapper } from '@/components/atoms';
 import { useAppDispatch, useAppSelector } from '@/store';
 import {
@@ -75,10 +76,10 @@ const TodoList = () => {
         </div>
         <div className={styles.footer}>
           <span className={styles.leftItemCount}>{`${leftItemCount} items left`}</span>
-          <button className={classNames(styles.clickable, { [`${styles.selectedItem}`]: selectedTodoType === TodoType.ALL })} onClick={() => listAllRecors()} type="button">All</button>
-          <button className={classNames(styles.clickable, { [`${styles.selectedItem}`]: selectedTodoType === TodoType.ACTIVE })} onClick={() => listActiveRecors()} type="button">Active</button>
-          <button className={classNames(styles.clickable, { [`${styles.selectedItem}`]: selectedTodoType === TodoType.COMPLETED })} onClick={() => listCompletedRecors()} type="button">Completed</button>
-          <button onClick={() => clearCompletedHandle()} type="button" className={styles.clickable}>Clear Completed</button>
+          <Button className={classNames(styles.clickable, { [`${styles.selectedItem}`]: selectedTodoType === TodoType.ALL })} onClick={() => listAllRecors()} type="button">All</Button>
+          <Button className={classNames(styles.clickable, { [`${styles.selectedItem}`]: selectedTodoType === TodoType.ACTIVE })} onClick={() => listActiveRecors()} type="Button">Active</Button>
+          <Button className={classNames(styles.clickable, { [`${styles.selectedItem}`]: selectedTodoType === TodoType.COMPLETED })} onClick={() => listCompletedRecors()} type="Button">Completed</Button>
+          <Button onClick={() => clearCompletedHandle()} type="button" className={styles.clickable}>Clear Completed</Button>
         </div>
       </InnerWrapper>
     </Wrapper>
