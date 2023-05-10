@@ -1,4 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
+import reactTestRenderer from 'react-test-renderer';
 import Button from '@/components/atoms/Button';
 
 describe('button component tests', () => {
@@ -24,5 +25,12 @@ describe('button component tests', () => {
     const button:any = render(<Button className="primary">button</Button>);
 
     expect(button.container.firstChild.classList.contains('primary')).toBe(true);
+  });
+
+  it('renders correctly', () => {
+    const tree = reactTestRenderer
+      .create(<Button type="button">Test Button</Button>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

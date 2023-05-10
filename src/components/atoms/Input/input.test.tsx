@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react';
+import reactTestRenderer from 'react-test-renderer';
 import Input from '@/components/atoms/Input';
 
 describe('input component tests', () => {
@@ -18,5 +19,12 @@ describe('input component tests', () => {
     const input:any = render(<Input className="form-control" disabled />);
 
     expect(input.container.firstChild).toHaveProperty('disabled');
+  });
+
+  it('renders correctly', () => {
+    const tree = reactTestRenderer
+      .create(<Input />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

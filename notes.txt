@@ -1,5 +1,5 @@
 npx lint-staged  : check eslint and stylint
-npm test : execute tests
+npm test, npm test -- -u : execute tests
 
 jest requirements;
 
@@ -15,6 +15,7 @@ dev dependencies;
     "jest-environment-jsdom": "^29.5.0",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
+    "react-test-renderer": "^18.2.0", // to snapshot
 
     babel.config.json
     jest.config.ts
