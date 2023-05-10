@@ -27,10 +27,10 @@ describe('button component tests', () => {
     expect(button.container.firstChild.classList.contains('primary')).toBe(true);
   });
 
-  it('renders correctly', () => {
+  test('renders correctly', () => {
     const tree = reactTestRenderer
       .create(<Button type="button">Test Button</Button>)
       .toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(tree).toMatchSnapshot('button2.test.tsx.snap');
   });
 });

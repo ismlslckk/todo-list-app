@@ -1,5 +1,6 @@
 npx lint-staged  : check eslint and stylint
-npm test, npm test -- -u : execute tests
+npm test : execute tests
+npm run deploy   : deploy current branch to github-pages
 
 jest requirements;
 

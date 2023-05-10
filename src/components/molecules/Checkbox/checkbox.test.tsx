@@ -23,7 +23,7 @@ describe('checkbox component tests', () => {
 
   it('renders correctly', () => {
     const tree = reactTestRenderer
-      .create(<Checkbox />)
+      .create(<Checkbox id="1" />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

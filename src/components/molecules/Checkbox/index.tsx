@@ -4,7 +4,7 @@ import styles from './checkbox.module.scss';
 import Input from '@/components/atoms/Input';
 
 const Checkbox = ({ ...props }) => {
-  const [id] = useState(v4());
+  const [id] = useState(props.id ? props.id : v4());
 
   return (
 
