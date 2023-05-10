@@ -12,6 +12,10 @@
     flex-direction: row;
     background: var(--white);
     border-bottom: 1px solid lightgray;
+
+    &:hover .removeButton{
+        display: block;
+    }
 }
 
 .todoItemCheckboxDiv {
@@ -30,6 +34,7 @@
     cursor: pointer;
 
     & .removeButton{
+        display: none;
         cursor: pointer;
         border: unset;
         background: transparent;

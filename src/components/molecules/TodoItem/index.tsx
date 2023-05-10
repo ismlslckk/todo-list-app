@@ -1,18 +1,15 @@
 import { useEffect, useState } from 'react';
 import styles from './todoitem.module.scss';
-import { Checkbox } from '@/components';
-import Input from '@/components/atoms/Input';
 import { remove, toggleCompleted } from '@/features/todo/todoSlice';
 import { useAppDispatch } from '@/store';
 import { Todo } from '@/types';
-import { useHover } from '@/hooks';
 import Button from '@/components/atoms/Button';
+import Checkbox from '../Checkbox';
+import { Input } from '@/components/atoms';
 
 const TodoItem = (props:any) => {
   const [completed, setCompleted] = useState(false);
   const { todo = {} as Todo } = { ...props };
-
-  const [hoverRef, isHovering] = useHover<HTMLDivElement>();
 
   const dispatch = useAppDispatch();
 
@@ -30,7 +27,7 @@ const TodoItem = (props:any) => {
   }, []);
 
   return (
-    <div className={styles.todoItemDiv} ref={hoverRef}>
+    <div className={styles.todoItemDiv}>
       <div className={styles.todoItemCheckboxDiv}>
         <Checkbox
           name="completed"
@@ -50,9 +47,7 @@ const TodoItem = (props:any) => {
         )}
       </div>
       <div className={styles.todoItemRemove}>
-        {((isHovering)
-    && (<Button className={styles.removeButton} type="button" onClick={() => handleRemoveItemClick()}>X</Button>))}
-
+        <Button className={styles.removeButton} onClick={() => handleRemoveItemClick()}>X</Button>
       </div>
 
     </div>
@@ -60,5 +55,3 @@ const TodoItem = (props:any) => {
 };
 
 export default TodoItem;
-
-// className={styles['todo-item-remove']}

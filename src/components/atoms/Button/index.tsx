@@ -6,10 +6,10 @@ const Button = ({ ...props }) => {
   });
 
   return (
-  // eslint-disable-next-line react/button-has-type
     <button
-      {...props}
       className={className}
+      type="button"
+      {...props}
     >
       {props.children}
     </button>

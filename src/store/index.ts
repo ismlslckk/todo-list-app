@@ -7,14 +7,11 @@ const setLocalStorage = (list:Todo[]) => {
   localStorage.setItem('todos', JSON.stringify(list));
 };
 
-// eslint-disable-next-line arrow-body-style
-const localStorageRepositoryMiddleware: Middleware = ({ getState }) => {
-  return (next:any) => (action:any) => {
-    const { todoState } = getState();
-    setLocalStorage(todoState.todos);
-    const returnValue = next(action);
-    return returnValue;
-  };
+const localStorageRepositoryMiddleware: Middleware = ({ getState }) => (next:any) => (action:any) => {
+  const { todoState } = getState();
+  setLocalStorage(todoState.todos);
+  const returnValue = next(action);
+  return returnValue;
 };
 
 const store = configureStore({

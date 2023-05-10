@@ -4,7 +4,7 @@ import { useAppDispatch } from '@/store';
 import { Todo } from '@/types';
 import styles from './addtodoinput.module.scss';
 import Input from '@/components/atoms/Input';
-import { Checkbox } from '@/components';
+import Checkbox from '../Checkbox';
 
 const AddTodoInput = () => {
   const [titleInput, setTitleInput] = useState('');

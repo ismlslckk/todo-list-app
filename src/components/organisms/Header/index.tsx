@@ -1,7 +1,7 @@
 import { InnerWrapper, Wrapper } from '@/components/atoms';
 import styles from './header.module.scss';
-import { AddTodoInput } from '@/components';
 import { TodoList } from '@/pages';
+import { AddTodoInput } from '@/components/molecules';
 
 const Headerv2 = () => (
   <Wrapper>
