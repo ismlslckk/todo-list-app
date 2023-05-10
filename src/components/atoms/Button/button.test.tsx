@@ -31,6 +31,6 @@ describe('button component tests', () => {
     const tree = reactTestRenderer
       .create(<Button type="button">Test Button</Button>)
       .toJSON();
-    expect(tree).toMatchSnapshot('button2.test.tsx.snap');
+    expect(tree).toMatchSnapshot();
   });
 });
