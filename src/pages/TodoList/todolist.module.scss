@@ -9,19 +9,19 @@
     border-top: solid 1px lightgray;
     background-color: var(--white);
 
-    & .leftItemCount{
-        color:lightgray;
+    & .leftItemCount {
+        color: lightgray;
         font-weight: bold;
     }
 
-    & .clickable{
+    & .clickable {
         cursor: pointer;
         border: unset;
         background: var(--white);
     }
 }
 
-.todoListBody{
+.todoListBody {
     min-height: 327px;
     max-height: 327px;
     min-width: 367px;
@@ -29,8 +29,15 @@
     background-color: var(--white);
     overflow-y: scroll;
     border-radius: 5px;
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    overflow: hidden;
+
 }
 
-.selectedItem{
+.selectedItem {
     text-decoration: underline;
 }
