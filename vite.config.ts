@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { fileURLToPath, URL } from 'url';
+import eslint from 'vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
 
 // todo: reduce alias types
@@ -12,7 +13,7 @@ export default defineConfig({
     ],
   },
   base: '/todo-list-app/',
-  plugins: [react(), stylelint({
+  plugins: [react(), eslint(), stylelint({
     fix: false,
   })],
 
