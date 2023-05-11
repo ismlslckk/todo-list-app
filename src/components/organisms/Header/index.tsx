@@ -16,8 +16,11 @@ const Headerv2 = () => (
           </div>
         </div>
 
-        <div className={styles.todoList}>
-          <TodoList />
+        <div className={styles.todoFrame}>
+          <div className={styles.todoList}>
+            <TodoList />
+          </div>
+          <div className={styles.information}>Drag and drop to render list</div>
         </div>
 
       </div>

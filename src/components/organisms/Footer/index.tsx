@@ -1,7 +1,7 @@
 import styles from './footer.module.scss';
 
 const Footer = () => (
-  <div className={styles.footer}>Drag and drop to render list</div>
+  <div className={styles.footer} />
 );
 
 export default Footer;
