@@ -38,10 +38,14 @@ const todoSlice = createSlice({
       }
     },
     setSelectedTodoType: (state, action:PayloadAction<TodoType>) => ({ ...state, selectedTodoType: action.payload }),
+    updateTodoList: (state, action: PayloadAction<Array<Todo>>) => ({
+      ...state,
+      todos: [...action.payload],
+    }),
   },
 });
 
 export default todoSlice.reducer;
 export const {
-  add, remove, toggleCompleted, setSelectedTodoType, clearCompleted,
+  add, remove, toggleCompleted, setSelectedTodoType, clearCompleted, updateTodoList,
 } = todoSlice.actions;
