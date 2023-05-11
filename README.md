@@ -59,6 +59,7 @@ The project allows you to manage a simple todo list. The following approaches ar
   <li>SCSS Modules</li>
   <li>Atomic Design</li>
   <li>Redux Toolkit</li>
+  <li>Jest</li>
   <li>ESLint</li>
   <li>Stylelint</li>
   <li>Husky Tools</li>
@@ -98,6 +99,14 @@ You can use nvm to be able to manage versions of node js
 3. Run Project
    ```sh
    npm run dev
+   ```  
+4. Run Test
+   ```sh
+   npm test
+   ```  
+5. Update Snapshots
+   ```sh
+   npm testUpdateSnapshot
    ```  
 
 
