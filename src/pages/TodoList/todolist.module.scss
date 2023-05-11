@@ -30,13 +30,11 @@
     overflow-y: scroll;
     border-radius: 5px;
 
-    ::-webkit-scrollbar {
-        display: none;
-    }
-
-    overflow: hidden;
-
 }
+
+.todoListBody::-webkit-scrollbar {
+    display: none;
+  }
 
 .selectedItem {
     text-decoration: underline;
