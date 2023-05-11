@@ -123,7 +123,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- contact -->
 ## Contact
 
-ismail selçuk - [@twitter_handle](https://www.linkedin.com/in/ismail-sel%C3%A7uk-108741163/) - ismlslck@gmail.com
+ismail selçuk - <a href="https://www.linkedin.com/in/ismail-sel%C3%A7uk-108741163/">Linkedin</a> - ismlslck@gmail.com
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
@@ -131,7 +131,7 @@ ismail selçuk - [@twitter_handle](https://www.linkedin.com/in/ismail-sel%C3%A7u
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [Vite.js]:  https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white
-[Vite-url]: [https://reactjs.org/](https://vitejs.dev/)
+[Vite-url]: https://vitejs.dev/
 
 
 
