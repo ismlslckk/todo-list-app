@@ -26,28 +26,25 @@
 
 
 <!-- TABLE OF CONTENTS -->
-<details>
+<details open>
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      About The Project
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li>Built With</li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+     Getting Started
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li>Prerequisites</li>
+        <li>Installation</li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li>Contributing</li>
+    <li>License</li>
+    <li>Contact</li>
   </ol>
 </details>
 
@@ -123,7 +120,7 @@ Don't forget to give the project a star! Thanks again!
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
-<!-- CONTACT -->
+<!-- contact -->
 ## Contact
 
 ismail selçuk - [@twitter_handle](https://www.linkedin.com/in/ismail-sel%C3%A7uk-108741163/) - ismlslck@gmail.com
