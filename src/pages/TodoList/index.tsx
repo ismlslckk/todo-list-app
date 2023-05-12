@@ -21,7 +21,13 @@ const TodoList = () => {
   const [listedRecords, setListedRecords] = useState<Todo[]>([]);
 
   const calculateLeftItemCount = () => {
-    setLeftItemCount(listedRecords.filter((todo:Todo) => !todo.completed).length);
+    if (selectedTodoType === TodoType.ACTIVE) {
+      setLeftItemCount(listedRecords.filter((todo:Todo) => !todo.completed).length);
+    } else if (selectedTodoType === TodoType.COMPLETED) {
+      setLeftItemCount(listedRecords.filter((todo:Todo) => todo.completed).length);
+    } else {
+      setLeftItemCount(listedRecords.length);
+    }
   };
 
   /**

@@ -15,8 +15,10 @@ const todoSlice = createSlice({
   initialState,
   reducers: {
     add: (state, action: PayloadAction<Todo>) => {
-      const newTodo = ({ id: v4(), completed: action.payload.completed, title: action.payload.title }) as Todo;
-      state.todos.push(newTodo);
+      if (action.payload.title) {
+        const newTodo = ({ id: v4(), completed: action.payload.completed, title: action.payload.title }) as Todo;
+        state.todos.push(newTodo);
+      }
     },
     remove: (state, action:PayloadAction<Todo>) => {
       const findedItem = state.todos.find((item:Todo) => item.id === action.payload.id);
