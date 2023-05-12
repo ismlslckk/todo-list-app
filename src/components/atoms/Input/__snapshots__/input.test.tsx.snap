@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`input component tests renders correctly 1`] = `
-<input
-  className="form-control"
-/>
-`;
